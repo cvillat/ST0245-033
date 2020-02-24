@@ -63,7 +63,7 @@ def linearIn(outer, inner):
     for j in range(len(outer)):
       if (inner[i] == outer[j]):
         n = n+1
-        break;
+        break
   return n == len(inner)
 
 linearIn([-1, 0, 3, 3, 3, 10, 12], [-1, 0, 3, 12])
