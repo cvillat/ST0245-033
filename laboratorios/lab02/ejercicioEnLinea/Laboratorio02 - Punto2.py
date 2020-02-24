@@ -1,4 +1,3 @@
-# Camilo Villa Tamayo
 # Miguel Angel Sarmiento Aguiar
 # Marlon Perez Rios
 
