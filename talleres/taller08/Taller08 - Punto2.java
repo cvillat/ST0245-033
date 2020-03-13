@@ -1,7 +1,7 @@
-# Punto 2
+// Punto 2
 
-# Miguel Angel Sarmiento Aguiar
-# Marlon Perez Rios
+// Miguel Angel Sarmiento Aguiar
+// Marlon Perez Rios
 
 import java.util.*;
 
