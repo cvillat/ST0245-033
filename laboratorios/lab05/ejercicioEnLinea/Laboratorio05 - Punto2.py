@@ -34,29 +34,28 @@ def Crear_Mapas(ListaInstrucciones):
 # Autor: Divyanshu Mehta
 # Tomado de: https://www.geeksforgeeks.org/bipartite-graph/
 
-class Graph(): 
+class Graph():
+  def __init__(self, V):
+    self.V = V
+    self.graph = [[0 for column in range(V)] \
+                  for row in range(V)]
 
-	def __init__(self, V): 
-		self.V = V
-		self.graph = [[0 for column in range(V)] \
-                for row in range(V)]
-
-	def isBipartite(self, src): 
-		colorArr = [-1] * self.V
-		colorArr[src] = 1
-		queue = []
-		queue.append(src)
-		while queue:
-			u = queue.pop()
-			if self.graph[u][u] == 1:
-				return False
-			for v in range(self.V):
-				if self.graph[u][v] == 1 and colorArr[v] == -1:
-					colorArr[v] = 1 - colorArr[u]
-					queue.append(v)
-				elif self.graph[u][v] == 1 and colorArr[v] == colorArr[u]:
-					return False
-		return True
+  def isBipartite(self, src):
+    colorArr = [-1] * self.V
+    colorArr[src] = 1
+    queue = []
+    queue.append(src)
+    while queue:
+      u = queue.pop()
+      if self.graph[u][u] == 1:
+        return False
+      for v in range(self.V):
+        if self.graph[u][v] == 1 and colorArr[v] == -1:
+          colorArr[v] = 1 - colorArr[u]
+          queue.append(v)
+        elif self.graph[u][v] == 1 and colorArr[v] == colorArr[u]:
+          return False
+    return True
 
 Entrada = ["3","3","0 1","1 2","2 0","3","2","0 1","1 2","9","8","0 1","0 2","0 3","0 4","0 5","0 6","0 7","0 8","0"]
 ListaInstrucciones = Crear_Lista_Instrucciones(Entrada)
